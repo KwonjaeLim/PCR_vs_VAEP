@@ -4,7 +4,7 @@
 Code repository for the SSAC27 research abstract. Work in progress: code is being cleaned and will be updated.
 
 ## Data (not included; links only)
-- PFF FC 2022 World Cup dataset: [PFF FC 안내 페이지 링크]. Access by request. 
+- PFF FC 2022 World Cup dataset: [https://www.blog.fc.pff.com/blog/pff-fc-release-2022-world-cup-data]. Access by request. 
 - StatsBomb Open Data: https://github.com/statsbomb/open-data.
 
 ## Method summary
