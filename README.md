@@ -29,12 +29,12 @@ Python 3.11. Install with `pip install -r requirements.txt`.
 ## How to reproduce (run from the repository root, in this order)
 | Step | Script | Main inputs | Main outputs |
 |---|---|---|---|
-| 1 | `src/01_build_vaep_model_statsbomb.py` | `statsbomb/data/` | `models/vaep_scores.json`, `models/vaep_concedes.json`, `data/features/`, `data/vaep/` |
-| 2 | `src/02_apply_vaep_to_pff.py` | PFF event files, `models/` | `data/pff_actions_ready/`, `data/pff_features/`, `data/pff_vaep/pff_vaep_final.parquet` |
-| 3 | `src/03_prepare_pff_tables.py` | PFF events and rosters, `pff_vaep_final.parquet` | `data/pff_vaep/minutes_total.parquet`, `data/pff_vaep/episodes.parquet` |
-| 4 | `src/04_compare_pcr_vs_vaep.py` | StatsBomb events/lineups, `episodes.parquet`, `minutes_total.parquet`, `players.csv` | `data/pff_vaep/final_comparison_M_rawmean.parquet` (prints rho, tau, kappa) |
-| 5 | `src/05_role_correlation.py` | `final_comparison_M_rawmean.parquet`, `data/pff_actions_ready/` | `data/pff_vaep/role_correlation_M.parquet` |
-| 6 | `src/06_make_figure1.py` | `role_correlation_M.parquet` | `figure1_B_only.png` |
+| 1 | `01_build_vaep_model_statsbomb.py` | `statsbomb/data/` | `models/vaep_scores.json`, `models/vaep_concedes.json`, `data/features/`, `data/vaep/` |
+| 2 | `02_apply_vaep_to_pff.py` | PFF event files, `models/` | `data/pff_actions_ready/`, `data/pff_features/`, `data/pff_vaep/pff_vaep_final.parquet` |
+| 3 | `03_prepare_pff_tables.py` | PFF events and rosters, `pff_vaep_final.parquet` | `data/pff_vaep/minutes_total.parquet`, `data/pff_vaep/episodes.parquet` |
+| 4 | `04_compare_pcr_vs_vaep.py` | StatsBomb events/lineups, `episodes.parquet`, `minutes_total.parquet`, `players.csv` | `data/pff_vaep/final_comparison_M_rawmean.parquet` (prints rho, tau, kappa) |
+| 5 | `05_role_correlation.py` | `final_comparison_M_rawmean.parquet`, `data/pff_actions_ready/` | `data/pff_vaep/role_correlation_M.parquet` |
+| 6 | `06_make_figure1.py` | `role_correlation_M.parquet` | `figure1_B_only.png` |
 
 Sanity check (n = 45 players): Spearman's rho = -0.111 (p = 0.470); Kendall's tau = -0.075 (p = 0.469); Cohen's kappa = 0.022 (51.1% agreement, top/bottom half); mean pass starting x-coordinate vs. VAEP rho = 0.572 (p < 0.001) and vs. PCR rho = -0.104 (p = 0.497).
 
